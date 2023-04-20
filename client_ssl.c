@@ -25,7 +25,7 @@ int main()
     struct sockaddr_in server_address;
     server_address.sin_family = AF_INET;
     server_address.sin_port = htons(443);
-    inet_pton(AF_INET, "ioi.ghtk.vn", &server_address.sin_addr);
+    inet_pton(AF_INET, "", &server_address.sin_addr);
     connect(sockfd, (struct sockaddr*)&server_address, sizeof(server_address));
 
     // Connect the SSL object with the socket
@@ -34,7 +34,7 @@ int main()
     SSL_connect(ssl);
 
     // Send a request to the server with x-access token
-    const char* request = "GET / HTTP/1.1\r\nHost: ioi.ghtk.vn\r\nX-Access-Token: "token"\r\n\r\n";
+    const char* request = "GET / HTTP/1.1\r\nHost: \r\nX-Access-Token: "token"\r\n\r\n";
     SSL_write(ssl, request, strlen(request));
 
     // Receive the response from the server

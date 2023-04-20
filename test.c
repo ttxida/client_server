@@ -7,7 +7,7 @@
 #include <openssl/err.h>
 
 int main(int argc, char *argv[]) {
-    char *hostname = "iot.ghtk.bn";
+    char *hostname = "";
     int port = 443;
 
     SSL_library_init();
@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
     SSL_set_fd(ssl, sockfd);
     SSL_connect(ssl);
 
-    char *request = "GET / HTTP/1.1\r\nHost: iot.ghtk.vn\r\n\r\n";
+    char *request = "GET / HTTP/1.1\r\nHost: \r\n\r\n";
     SSL_write(ssl, request, strlen(request));
 
     char buffer[1024];

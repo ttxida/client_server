@@ -10,7 +10,7 @@
 #define MAX_BUF_SIZE 1024
 
 int main() {
-    const char *host = "iot.ghtk.vn";
+    const char *host = "";
     const char *port = "443";
     const char *path = "";
     const char *token = "";
